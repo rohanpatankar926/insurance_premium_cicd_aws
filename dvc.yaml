@@ -1,0 +1,11 @@
+# different stages for the CICD pipeline
+stages:
+  load_data:
+    cmd: python src/load_data.py --config=parameters.yaml
+    deps:
+    - src/get_data.py
+    - data_given/insurance.csv
+    outs:
+    - data/raw/insurance.csv
+  
+  
