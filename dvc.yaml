@@ -1,5 +1,6 @@
 # different stages for the CICD pipeline
 stages:
+  # 1st stage
   load_data:
     cmd: python src/load_data.py --config=parameters.yaml
     deps:
@@ -8,5 +9,15 @@ stages:
     - data_given/insurance.csv
     outs:
     - data/raw/insurance.csv
+  # 2nd stage
+  split_data:
+    cmd: python src/split_data.py --config=parameters.yaml
+    deps:
+      - src/split_data.py
+      - data/raw/insurance.csv
+    outs:
+      - data/processed/train_insurance.csv
+      - data/processed/test_insurance.csv
+
   
   

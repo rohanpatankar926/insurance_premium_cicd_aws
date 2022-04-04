@@ -16,3 +16,19 @@ stages:
     - path: data/raw/insurance.csv
       md5: 5a64c6a34169eb73c789fe66d1aaf5d6
       size: 50295
+  split_data:
+    cmd: python src/split_data.py --config=parameters.yaml
+    deps:
+    - path: data/raw/insurance.csv
+      md5: 5a64c6a34169eb73c789fe66d1aaf5d6
+      size: 50295
+    - path: src/split_data.py
+      md5: e794ac40fa99b68deec18dff28b9b940
+      size: 1073
+    outs:
+    - path: data/processed/test_insurance.csv
+      md5: 0ff4eceb04506d0ef4e97872ebc49802
+      size: 10105
+    - path: data/processed/train_insurance.csv
+      md5: b8fb1aa85cc133ba7dc3df1ad2e403ff
+      size: 40234
