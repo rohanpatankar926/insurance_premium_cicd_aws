@@ -104,5 +104,16 @@ h2{
     .container{
         width: 100%;
     }
+    input[type=submit]{
+        width: 100%;
+        
+    
+    }
+    a{
+        font-size: 1.4rem;
+    }
+    h2{
+        font-size: 2rem;
+    }
 
 }
