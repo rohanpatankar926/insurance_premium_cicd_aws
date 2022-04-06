@@ -23,12 +23,12 @@ stages:
       md5: 5a64c6a34169eb73c789fe66d1aaf5d6
       size: 50295
     - path: src/split_data.py
-      md5: e794ac40fa99b68deec18dff28b9b940
-      size: 1073
+      md5: f8590df2306fabaf8107e40f9844eb88
+      size: 1295
     outs:
     - path: data/processed/test_insurance.csv
-      md5: 0ff4eceb04506d0ef4e97872ebc49802
-      size: 10105
+      md5: 5ebef7d2eec3312143d85a6551ebeb42
+      size: 6555
     - path: data/processed/train_insurance.csv
-      md5: b8fb1aa85cc133ba7dc3df1ad2e403ff
-      size: 40234
+      md5: 6235b9b8ae50c386c93cb6e56fb8179d
+      size: 26130
