@@ -8,7 +8,7 @@ dirs = [
     "saved_models",
     "src",
     "webapp",
-    "report",
+    "reports",
 ]
 for dir in dirs:
     """ exist_ok checks if the folder is already created or not
@@ -22,7 +22,7 @@ for dir in dirs:
 
 files = [
     'dvc.yaml',
-    'parameters.yaml',
+    'params.yaml',
     '.gitignore',
     os.path.join('src','__init__.py')
 ]

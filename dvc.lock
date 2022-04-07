@@ -1,30 +1,30 @@
 schema: '2.0'
 stages:
   load_data:
-    cmd: python src/load_data.py --config=parameters.yaml
+    cmd: python src/load_data.py --config=params.yaml
     deps:
     - path: data_given/insurance.csv
       md5: 1e336f97963437f5f9579ae9ca385680
       size: 50264
     - path: src/get_data.py
-      md5: e8f006452eab211b06630ce46bb83889
-      size: 761
+      md5: 9065a0b1631602050c8db19a4d24c09d
+      size: 750
     - path: src/load_data.py
-      md5: bc3bc0561857021ad467149ff855ab48
-      size: 544
+      md5: 74f38a2666294006698187e2a72ea017
+      size: 540
     outs:
     - path: data/raw/insurance.csv
       md5: 5a64c6a34169eb73c789fe66d1aaf5d6
       size: 50295
   split_data:
-    cmd: python src/split_data.py --config=parameters.yaml
+    cmd: python src/split_data.py --config=params.yaml
     deps:
     - path: data/raw/insurance.csv
       md5: 5a64c6a34169eb73c789fe66d1aaf5d6
       size: 50295
     - path: src/split_data.py
-      md5: f8590df2306fabaf8107e40f9844eb88
-      size: 1295
+      md5: 983d10e0f227d665d02470588a895a9a
+      size: 1291
     outs:
     - path: data/processed/test_insurance.csv
       md5: 5ebef7d2eec3312143d85a6551ebeb42
@@ -32,3 +32,29 @@ stages:
     - path: data/processed/train_insurance.csv
       md5: 6235b9b8ae50c386c93cb6e56fb8179d
       size: 26130
+  train_and_evaluate:
+    cmd: python src/train_and_evaluate.py --config=params.yaml
+    deps:
+    - path: data/processed/test_insurance.csv
+      md5: 5ebef7d2eec3312143d85a6551ebeb42
+      size: 6555
+    - path: data/processed/train_insurance.csv
+      md5: 6235b9b8ae50c386c93cb6e56fb8179d
+      size: 26130
+    - path: src/train_and_evaluate.py
+      md5: 330768f7aee8eb118160d5e0673e2bcb
+      size: 2519
+    params:
+      params.yaml:
+        estimators.ElasticNet.params.alpha: 0.98
+        estimators.ElasticNet.params.l1_ratio: 0.89
+    outs:
+    - path: reports/params.json
+      md5: af6f5eb6221d82c0ef194ee5fb5a9d2a
+      size: 43
+    - path: reports/scores.json
+      md5: 757c76831bce7fe280ce6fa2727fb588
+      size: 93
+    - path: saved_models/model.joblib
+      md5: 528e15edab09c15a4fd4d002e0df85fb
+      size: 1054

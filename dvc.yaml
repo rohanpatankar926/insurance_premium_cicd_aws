@@ -2,7 +2,7 @@
 stages:
   # 1st stage
   load_data:
-    cmd: python src/load_data.py --config=parameters.yaml
+    cmd: python src/load_data.py --config=params.yaml
     deps:
     - src/get_data.py
     - src/load_data.py
@@ -11,7 +11,7 @@ stages:
     - data/raw/insurance.csv
   # 2nd stage
   split_data:
-    cmd: python src/split_data.py --config=parameters.yaml
+    cmd: python src/split_data.py --config=params.yaml
     deps:
       - src/split_data.py
       - data/raw/insurance.csv
@@ -21,7 +21,7 @@ stages:
   
   # stage 3
   train_and_evaluate:
-    cmd: python src/train_and_evaluate.py --config=parameters.yaml
+    cmd: python src/train_and_evaluate.py --config=params.yaml
     deps:
     - data/processed/train_insurance.csv
     - data/processed/test_insurance.csv
@@ -30,9 +30,9 @@ stages:
     - estimators.ElasticNet.params.alpha
     - estimators.ElasticNet.params.l1_ratio
     metrics:
-    - report/scores.json:
+    - reports/scores.json:
         cache: false
-    - report/params.json:
+    - reports/params.json:
         cache: false
     outs:
     - saved_models/model.joblib
