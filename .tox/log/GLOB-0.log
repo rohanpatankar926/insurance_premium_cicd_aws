@@ -1,0 +1,52 @@
+action: GLOB, msg: packaging
+cwd: /home/nix-code/Desktop/Insurance-premium-prediction-Ineuron
+cmd: /home/nix-code/virtualenv/venv/bin/python setup.py sdist --formats=zip --dist-dir .tox/dist
+running sdist
+running egg_info
+writing insurance.egg-info/PKG-INFO
+writing dependency_links to insurance.egg-info/dependency_links.txt
+writing top-level names to insurance.egg-info/top_level.txt
+reading manifest file 'insurance.egg-info/SOURCES.txt'
+adding license file 'LICENSE'
+writing manifest file 'insurance.egg-info/SOURCES.txt'
+running check
+warning: check: missing required meta-data: url
+
+warning: check: missing meta-data: if 'author' supplied, 'author_email' should be supplied too
+
+creating insurance-0.1
+creating insurance-0.1/insurance.egg-info
+creating insurance-0.1/src
+copying files to insurance-0.1...
+copying LICENSE -> insurance-0.1
+copying README.md -> insurance-0.1
+copying setup.py -> insurance-0.1
+copying insurance.egg-info/PKG-INFO -> insurance-0.1/insurance.egg-info
+copying insurance.egg-info/SOURCES.txt -> insurance-0.1/insurance.egg-info
+copying insurance.egg-info/dependency_links.txt -> insurance-0.1/insurance.egg-info
+copying insurance.egg-info/top_level.txt -> insurance-0.1/insurance.egg-info
+copying src/__init__.py -> insurance-0.1/src
+copying src/get_data.py -> insurance-0.1/src
+copying src/load_data.py -> insurance-0.1/src
+copying src/split_data.py -> insurance-0.1/src
+copying src/train_and_evaluate.py -> insurance-0.1/src
+Writing insurance-0.1/setup.cfg
+creating '.tox/dist/insurance-0.1.zip' and adding 'insurance-0.1' to it
+adding 'insurance-0.1'
+adding 'insurance-0.1/src'
+adding 'insurance-0.1/insurance.egg-info'
+adding 'insurance-0.1/LICENSE'
+adding 'insurance-0.1/PKG-INFO'
+adding 'insurance-0.1/setup.py'
+adding 'insurance-0.1/README.md'
+adding 'insurance-0.1/setup.cfg'
+adding 'insurance-0.1/src/split_data.py'
+adding 'insurance-0.1/src/__init__.py'
+adding 'insurance-0.1/src/get_data.py'
+adding 'insurance-0.1/src/load_data.py'
+adding 'insurance-0.1/src/train_and_evaluate.py'
+adding 'insurance-0.1/insurance.egg-info/PKG-INFO'
+adding 'insurance-0.1/insurance.egg-info/SOURCES.txt'
+adding 'insurance-0.1/insurance.egg-info/dependency_links.txt'
+adding 'insurance-0.1/insurance.egg-info/top_level.txt'
+removing 'insurance-0.1' (and everything under it)
