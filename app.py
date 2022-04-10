@@ -6,6 +6,7 @@ import os
 import yaml
 import joblib
 import numpy as np
+import pandas as pd
 from src.get_data import read_params
 
 params_path = 'params.yaml' 
@@ -26,24 +27,25 @@ def predict(data):
     model_dir_path = config["webapp_model_dir"]
     model = joblib.load(model_dir_path)
     prediction = model.predict(data)
-    print(prediction)
+    
+
     return prediction[0]
 
 def api_response(request):
     try:
-        data = np.array([list(request.json.values)])
+        data = np.array([list(request.json.values())])
         response = predict(data)
         response = {"response":response}
-        return response
+        return jsonify(response)
+
     except Exception as e:
         print(e)
         error = {"error":"something went wrong"}
         return error
 
-
 @app.route("/",methods=["GET","POST"])
 
-def index():
+def home():
     if request.method=='POST':
         try:
             if request.form:
@@ -70,3 +72,9 @@ def index():
 
 if __name__=="__main__":
     app.run(host="0.0.0.0",port=5000,debug=True)
+
+# Workflows. A workflow is a configurable automated process that will run one or more jobs. 
+# Workflows are defined by a YAML file checked in to your repository and will run when triggered by an event in your repository,
+#  or they can be triggered manually, or at a defined schedule.
+
+#mkdit .github/workflows

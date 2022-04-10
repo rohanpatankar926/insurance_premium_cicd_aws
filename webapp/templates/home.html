@@ -33,21 +33,32 @@
         <div class="insurance-detail">
            <h2>Insurance price prediction</h2>
            
-            <form action="">
-                <input type="text" name="" id="" placeholder="age">
-                <input type="text" name="" id="" placeholder="sex">
-                <input type="text" name="" id="" placeholder="bmi">
-                <input type="text" name="" id="" placeholder="children">
-                <input type="text" name="" id="" placeholder="smoker">
-                <input type="text" name="" id="" placeholder="region">
-                <input type="submit" value="Predict" name="" id="">
+            <form method="POST">
+                <input type="text" name="age" id="" placeholder="age">
+                <input type="text" name="sex" id="" placeholder="sex">
+                <input type="text" name="bmi" id="" placeholder="bmi">
+                <input type="text" name="children" id="" placeholder="children">
+                <input type="text" name="smoker" id="" placeholder="smoker">
+                <input type="text" name="region" id="" placeholder="region">
+                <input type="submit" value="Predict">
             </form>
 
+            <div class="response-me">
+                <h3>Premium {{response}}</h3>
+            </div>
+
         </div>
+      
+     
         <div class="img-insure">
             <img src="/static/img/home.png" alt="">
         </div>
+
     </div>
+
+  
+         
+ 
 
 </body>
 

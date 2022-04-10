@@ -87,6 +87,16 @@ h2{
     line-height: 34px;
 }
 
+.response-me{
+    width: 50%;
+    padding: 30px 50px;
+    font-size: 2.2rem;
+    color: #060570;
+    background-color: rgb(196, 220, 252);
+    margin-top: 2rem;
+    border-radius: 50%;
+}
+
 @media screen and (max-width:1118px){
 
     .section-body{
@@ -115,5 +125,7 @@ h2{
     h2{
         font-size: 2rem;
     }
-
+.response-me{
+    width: 100%;
+}
 }
