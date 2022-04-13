@@ -7,14 +7,17 @@ import yaml
 import joblib
 import numpy as np
 import pandas as pd
+import logging
 from src.get_data import read_params
 
+logging.basicConfig(format='%(message)s',level=logging.INFO)
 params_path = 'params.yaml' 
 webapp_root = 'webapp'
 # static folder
 static_dir = os.path.join(webapp_root,'static')
 template_dir = os.path.join(webapp_root,'templates')
 
+logging.info("directory management snippet")
 app = Flask(__name__,static_folder=static_dir,template_folder=template_dir)
 
 def read_params(config_path):
@@ -31,6 +34,8 @@ def predict(data):
 
     return prediction[0]
 
+logging.info("predictive model demonstration")
+
 def api_response(request):
     try:
         data = np.array([list(request.json.values())])
@@ -43,6 +48,7 @@ def api_response(request):
         error = {"error":"something went wrong"}
         return error
 
+logging.info("start flask app")
 @app.route("/",methods=["GET","POST"])
 
 def home():
@@ -69,7 +75,7 @@ def home():
 
     else:
         return render_template('home.html')
-
+logging.info("run the flask app")
 if __name__=="__main__":
     app.run(host="0.0.0.0",port=5000,debug=True)
 
