@@ -13,3 +13,4 @@ tox
 flake8
 flask
 gunicorn
+inflect

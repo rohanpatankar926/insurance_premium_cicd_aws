@@ -18,11 +18,9 @@
             </div>
             <nav>
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="#">FAQ</a></li>
-                 
+                    <li><a href="/">Home</a></li>
+                    <li><a href="https://github.com/Nix-code/Insurance-premium-prediction-Ineuron">Github</a></li>
+                    <li><a href="https://nixhantme.herokuapp.com/">Contact</a></li>
                 </ul>
             </nav>
         </div>
@@ -34,17 +32,34 @@
            <h2>Insurance price prediction</h2>
            
             <form method="POST">
-                <input type="text" name="age" id="" placeholder="age">
-                <input type="text" name="sex" id="" placeholder="sex">
+                <input type="text" name="age" id="" placeholder="age between 18 to 64">
+                <select name="sex" id="" class="custom-style">
+                  <option value="male">Male</option>
+                  <option value="female">Male</option>
+                </select>
                 <input type="text" name="bmi" id="" placeholder="bmi">
                 <input type="text" name="children" id="" placeholder="children">
-                <input type="text" name="smoker" id="" placeholder="smoker">
-                <input type="text" name="region" id="" placeholder="region">
+                <select name="smoker" id="" class="custom-style">
+                   <option value="yes">Yes</option>
+                   <option value="no">No</option>
+                </select>
+                
+                 <select name="region" id="" class="custom-style">
+                    <option value="SouthWest">SouthWest</option>
+                    <option value="SouthEast">SouthEast</option>
+                    <option value="NorthWest">NorthWest</option>
+                    <option value="NorthWest">NorthEast</option>
+                 </select>
                 <input type="submit" value="Predict">
             </form>
 
             <div class="response-me">
-                <h3>Premium {{response}}</h3>
+                <h3 style="font-size: 2.2rem;">Predicted Premium</h3><br>
+               
+                    <h1 style="font-size: 2.2rem;color: rgb(184, 6, 65); margin-bottom: 6px;">{{response_int}}</h1>
+                    <h1 style="font-size: 1.7rem; color: rgb(9, 154, 31);">{{response}}</h1>
+               
+                
             </div>
 
         </div>
