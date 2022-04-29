@@ -30,7 +30,7 @@ their individual health situation</p>
 - You can either use conda environment where you will get pre installed libraries
 - You can create virtual environment and install the required libraries manually
 
-## Activate the virtual environment
+### Activate the virtual environment
 
 ``` cd virtual env
     source venv/bin/activate
@@ -39,11 +39,11 @@ their individual health situation</p>
  2. create params.yaml file for structuring your project operations
  3. create dvc.yaml for pipeline
  
- ## Src 
+ ### Src 
  - src file usually contains the source code we write
  - You can see files like get_data.py or load_data.py inside src file
  
- ## Version Control
+ ### Version Control
  - It is advised to use git for tracking the code , you can also use dvc for tracking the changes
  
  ## Here is simple snippet for tracking
@@ -60,20 +60,56 @@ their individual health situation</p>
  
  ```
  
- ## Tox command
- ```tox```
+ ### Tox command
  
- ## For rebuilding
+ tox aims to automate and standardize testing in Python. It is part of a larger vision of easing the packaging, testing and release process of Python 
+ 
+ ```
+ [tox]
+    envlist=py37
+    [testenv]
+    deps=pytest
+    command=pytest -v
+```
+ 
+ 
+ ### For rebuilding
  
  ``` tox -r ```
- ## pytest 
+ ### pytest 
  
  ``` pytest -v ```
+ <p> Used for testing purposes. You can use pip install pytest and pip install tox </p>
  ## setup
  
  ```pip install -e ```
  
- ## Package building
+ ### Package building
  
  ```python setup.py sdist bdist_wheel ```
  
+ ### Hands on commands for testing
+ 
+``` dvc repro ```
+``` dvc metrics show ```
+
+<p> Use logging libraries for making logs </p>
+
+### Testing 
+<p> while testing your file names must contains the word test in it. For ex: xyztest.py or configtest.py </p>
+
+<p> After writing code, run pytest -v and see all test cases done </p>
+
+### Web deployment
+
+<p> Flask for backend and Html, css for frontend </p>
+<p> All the code are given in app.py </p>
+
+### Run the project
+
+- Clone the project
+- pip install -r requirements.txt
+- python app.py
+
+<p> Enjoy the project in a local host
+    
