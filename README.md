@@ -16,6 +16,11 @@ their individual health situation</p>
 [Dataset](https://www.kaggle.com/noordeen/insurance-premium-prediction) is provided by Ineuron
 
 ### Web application 
-<img src="https://github.com/Nix-code/Insurance-premium-prediction-Ineuron/blob/main/docs/webapplication.png" alt="home page">
+- Input 
+<img src="https://github.com/Nix-code/Insurance-premium-prediction-Ineuron/blob/main/docs/input.png" alt="input-value">
+
+- Output
+<img src="https://github.com/Nix-code/Insurance-premium-prediction-Ineuron/blob/main/docs/output.png" alt="output-value">
+
 
 
